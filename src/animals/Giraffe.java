@@ -7,6 +7,8 @@ import food.IEdible;
 import mobility.Point;
 import utilities.MessageUtility;
 
+import java.awt.*;
+
 public class Giraffe extends Animal{
     private static final double startWeight = 450;
     private static final Point startPosition = new Point(50,0);
@@ -14,38 +16,39 @@ public class Giraffe extends Animal{
     private static final double maxNeckLength = 2.5;
     private static final double defaultNeckLength = 1.5;
     private static final String Chew ="Bleats and Stomps its legs, then chews";
-
     private double neckLength;
-    //Constructors
+
     public Giraffe(String name){
         super(name,startPosition);
-        MessageUtility.logConstractor("Giraffe", this.getName());
         this.setWeight(startWeight);
         this.setNeckLength(defaultNeckLength);
         this.setDiet(new Herbivore());
+        MessageUtility.logConstractor("Giraffe", this.getName());
     }
     public Giraffe(String name,Point location){
         super(name,location);
-        MessageUtility.logConstractor("Giraffe", this.getName());
         this.setWeight(startWeight);
         this.setNeckLength(defaultNeckLength);
         this.setDiet(new Herbivore());
+        MessageUtility.logConstractor("Giraffe", this.getName());
     }
     public Giraffe(String name, double neckLength){
         super(name,startPosition);
-        MessageUtility.logConstractor("Giraffe", this.getName());
         this.setWeight(startWeight);
         this.setNeckLength(neckLength);
         this.setDiet(new Herbivore());
+        MessageUtility.logConstractor("Giraffe", this.getName());
     }
 
     public void chew(){
         MessageUtility.logSound(this.getName(),Chew);
     }
     @Override
-    public void makeSound() {
-        chew();
+    public void makeSound() { chew();}
 
+    @Override
+    public EFoodType getFoodType() {
+        return null;
     }
 
     public boolean setNeckLength(double neckLength){
@@ -59,4 +62,55 @@ public class Giraffe extends Animal{
         return flag;
     }
 
+    @Override
+    public EFoodType getFoodtype() {
+        return null;
+    }
+
+    @Override
+    public String getAnimalName() {
+        return null;
+    }
+
+    @Override
+    public int getSize() {
+        return 0;
+    }
+
+    @Override
+    public void eatInc() {
+
+    }
+
+    @Override
+    public int getEatCount() {
+        return super.getEatCount();
+
+
+    }
+
+    @Override
+    public boolean getChanges() {
+        return false;
+    }
+
+    @Override
+    public void setChanges(boolean state) {
+
+    }
+
+    @Override
+    public void loadImages(String nm) {
+
+    }
+
+    @Override
+    public void drawObject(Graphics g) {
+
+    }
+
+    @Override
+    public String getColor() {
+        return null;
+    }
 }

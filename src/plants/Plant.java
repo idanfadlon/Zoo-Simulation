@@ -4,6 +4,7 @@ import java.util.Random;
 
 import food.EFoodType;
 import food.IEdible;
+import graphics.IDrawable;
 import mobility.ILocatable;
 import mobility.Point;
 import utilities.MessageUtility;
@@ -12,7 +13,7 @@ import utilities.MessageUtility;
  * @author baroh
  *
  */
-public abstract class Plant implements IEdible, ILocatable {
+public abstract class Plant implements IEdible, ILocatable, IDrawable {
 
 	private double height;
 
@@ -27,7 +28,7 @@ public abstract class Plant implements IEdible, ILocatable {
 		this.location = new Point(x, y);
 		this.height = rand.nextInt(30);
 		this.weight = rand.nextInt(12);
-		MessageUtility.logConstractor("Plant", "Plant");
+
 	}
 
 	/*
@@ -91,7 +92,7 @@ public abstract class Plant implements IEdible, ILocatable {
 	 */
 	@Override
 	public boolean setLocation(Point newLocation) {
-		boolean isSuccess = Point.cheackBounderies(newLocation);
+		boolean isSuccess = Point.checkBoundaries(newLocation);
 		if (isSuccess) {
 			this.location = newLocation;
 		}

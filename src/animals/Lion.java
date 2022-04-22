@@ -1,11 +1,13 @@
 package animals;
 
 import diet.Carnivore;
+import diet.IDiet;
 import food.EFoodType;
 import food.IEdible;
 import mobility.Point;
 import utilities.MessageUtility;
 
+import java.awt.*;
 import java.util.Random;
 
 public class Lion extends Animal{
@@ -71,5 +73,52 @@ public class Lion extends Animal{
     public EFoodType getFoodtype(){
         MessageUtility.logGetter(this.getName(), "getFoodType", LION);
         return LION;
+    }
+
+    @Override
+    public String getAnimalName() {
+        return null;
+    }
+
+    @Override
+    public int getSize() {
+        return 0;
+    }
+
+    @Override
+    public void eatInc() {
+
+    }
+
+    @Override
+    public int getEatCount() {
+        return super.getEatCount();
+
+
+    }
+
+    @Override
+    public boolean getChanges() {
+        return false;
+    }
+
+    @Override
+    public void setChanges(boolean state) {
+
+    }
+
+    @Override
+    public void loadImages(String nm) {
+
+    }
+
+    @Override
+    public void drawObject(Graphics g) {
+
+    }
+
+    @Override
+    public String getColor() {
+        return null;
     }
 }

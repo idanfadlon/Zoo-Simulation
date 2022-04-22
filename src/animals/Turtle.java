@@ -7,18 +7,20 @@ import food.IEdible;
 import mobility.Point;
 import utilities.MessageUtility;
 
+import java.awt.*;
+
 public class Turtle extends Animal{
     private static final double startWeight = 1;
     private static final Point startPosition = new Point(80,0);
     private static final int minimumAge = 0;
     private static final int maximumAge = 500;
     private static final int defaultAge = 1;
-    private static final String Chew = "Chewwwwwwwwww !!!!!";
+    private static final String Chew = "Retracts its head in then eats quietly";
     private int Age;
     public Turtle(String name){
         super(name, startPosition);
         MessageUtility.logConstractor("Turtle", this.getName());
-        this.setWeight(minimumAge);
+        this.setWeight(startWeight);
         this.setAge(defaultAge);
         this.setDiet(new Herbivore());
     }
@@ -71,6 +73,53 @@ public class Turtle extends Animal{
     @Override
     //ask class
     public EFoodType getFoodtype() {
+        return null;
+    }
+
+    @Override
+    public String getAnimalName() {
+        return null;
+    }
+
+    @Override
+    public int getSize() {
+        return 0;
+    }
+
+    @Override
+    public void eatInc() {
+
+    }
+
+    @Override
+    public int getEatCount() {
+        return super.getEatCount();
+
+
+    }
+
+    @Override
+    public boolean getChanges() {
+        return false;
+    }
+
+    @Override
+    public void setChanges(boolean state) {
+
+    }
+
+    @Override
+    public void loadImages(String nm) {
+
+    }
+
+    @Override
+    public void drawObject(Graphics g) {
+
+    }
+
+    @Override
+    public String getColor() {
         return null;
     }
 }
