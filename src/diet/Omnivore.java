@@ -22,6 +22,8 @@ public class Omnivore implements IDiet{
         return value;
 
     }
-
+    public String toString(){
+        return "[" + this.getClass().getSimpleName() + "]";
+    }
 
 }

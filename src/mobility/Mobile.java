@@ -10,8 +10,7 @@ public abstract class Mobile implements ILocatable{
     private Point location;
     private double totalDistance = 0;
 
-    public Mobile (Point location){
-        setLocation(location);
+    public Mobile (){
         this.totalDistance =0;
     }
     public boolean setLocation(Point p){
@@ -44,7 +43,7 @@ public abstract class Mobile implements ILocatable{
     }
     @Override
     public Point getLocation() {
-        MessageUtility.logGetter("Mobile","getLocation",this.location);
+
         return location;
     }
     public String toString(){
@@ -52,7 +51,6 @@ public abstract class Mobile implements ILocatable{
         return "Location: " + location + ", Total Distance: " + totalDistance;
     }
     public double getTotalDistance() {
-        MessageUtility.logGetter("Mobile","getTotalDistance",this.totalDistance);
         return totalDistance;
     }
 }

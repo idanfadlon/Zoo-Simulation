@@ -9,7 +9,7 @@ public class Herbivore implements IDiet{
     @Override
     public boolean canEat(EFoodType food) {
         boolean herbivore = false;
-        if(food == EFoodType.VEGTABLE)
+        if(food == EFoodType.VEGETABLE)
             herbivore = true;
         MessageUtility.logBooleanFunction(this.toString(),"canEat",food,herbivore);
         return herbivore;

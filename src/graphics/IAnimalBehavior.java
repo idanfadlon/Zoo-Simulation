@@ -8,6 +8,6 @@ public interface IAnimalBehavior {
     public int getIntCount();
     public boolean getChanges();
     public void setChanges(boolean state);
-//    public boolean eat(int energy);
+    public boolean eat(int energy);
 }
 

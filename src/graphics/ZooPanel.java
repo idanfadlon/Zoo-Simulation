@@ -1,6 +1,7 @@
 package graphics;
 
 import animals.Animal;
+import animals.Bear;
 import plants.Cabbage;
 import plants.Plant;
 
@@ -26,12 +27,17 @@ public class ZooPanel extends JPanel implements Runnable {
     private JMenu background;
     private JMenu file;
     private JMenuItem exit,Help;
+    Graphics graphics;
+
 
     private Image ZooImage;
 
 
     public ZooPanel(){
-
+        Bear bear = new Bear("Blue",150,50,50);
+        Zoo.add(bear);
+        for(int i=0;i<Zoo.size();i++)
+            Zoo.get(i).setPanel(this);
         this.setLayout(new BorderLayout());
         this.northMenuBar = new JMenuBar();
         help = new JMenu("Help");
@@ -78,24 +84,25 @@ public class ZooPanel extends JPanel implements Runnable {
         this.add(northMenuBar,BorderLayout.NORTH);
 
         try {
-            ZooImage = ImageIO.read((new File("C:\\Users\\kibeb\\Downloads\\HW1-ZooProject\\HW1-ZooProject\\src\\graphics\\zooimg.jpg")));
+            img = ImageIO.read((new File("C:\\Users\\kibeb\\Downloads\\HW1-ZooProject\\HW1-ZooProject\\src\\assignment2_pictures\\savanna.jpg")));
         } catch (IOException e) {
             System.out.println("Cannot load image");
         }
-        int w = ZooImage.getWidth(null) ;
-        int h = ZooImage.getHeight(null) ;
-        this.add(new JLabel(new ImageIcon(ZooImage.getScaledInstance(w, h,
-                Image.SCALE_SMOOTH))));
+
+//        int w = img.getWidth(null)/2;
+//        int h = img.getHeight(null)/2;
+//        this.add(new JLabel(new ImageIcon(img.getScaledInstance(w, h,
+//                Image.SCALE_SMOOTH))));
+
+
     }
 
 
 
+
     public void manageZoo() {
-        while (true) {
             if (isChange())
                 repaint();
-
-        }
     }
 
 
@@ -106,11 +113,14 @@ public class ZooPanel extends JPanel implements Runnable {
     {
 
     }
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g) ;
-        if(img!=null)
-            g.drawImage(img,0,0,getWidth(),getHeight(), this);
 
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if(img!=null)
+            g.drawImage(img,0,0,img.getWidth(),img.getHeight(), this);
+        for(int i =0;i<Zoo.size();i++)
+            Zoo.get(i).drawObject(g);
 
     }
 

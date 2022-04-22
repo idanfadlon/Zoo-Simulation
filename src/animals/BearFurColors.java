@@ -2,7 +2,6 @@ package animals;
 
 public enum BearFurColors
 {
-
     GRAY("GRAY"),
     WHITE("WHITE"),
     BLACK("BLACK");
